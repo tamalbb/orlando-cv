@@ -60,7 +60,7 @@ const DEFAULTS = {
     heroNombre:    "TAMAL",
     heroSubtitulo: "YouTube · TikTok · Redes Sociales",
     heroTag:       "Editor de Video · Los Mochis, Sinaloa",
-    perfil:        "Editor de video con experiencia en contenido para YouTube, TikTok y redes sociales. Estudiante de Ingeniería en Software en la UAdeO Los Mochis. He formado parte del equipo de producción de Akim, trabajando en edición de largo formato, highlights y contenido para formatos cortos. Me adapto bien tanto a trabajo en equipo como de forma independiente.",
+    perfil:        "Editor de video con experiencia en contenido para YouTube, TikTok y redes sociales. Estudiante de Ingeniería en Software en la UAS Los Mochis. He formado parte del equipo de producción de Akim, trabajando en edición de largo formato, highlights y contenido para formatos cortos. Me adapto bien tanto a trabajo en equipo como de forma independiente.",
     stat1num: "3+",  stat1lbl: "Años editando",
     stat2num: "100+", stat2lbl: "Videos editados",
     stat3num: "YT",  stat3lbl: "YouTube Ready",
