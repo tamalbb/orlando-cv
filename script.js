@@ -68,7 +68,15 @@ const DEFAULTS = {
     contactoTitulo:   "Trabajemos juntos.",
     contactoSubtitulo:"¿Tienes un proyecto? Hablemos.",
     habilidades: ["Adobe Premiere Pro","CapCut","Filmora","Edición en PC","Edición Móvil","YouTube","TikTok","Redes Sociales","Highlights / Clips","Trabajo en Equipo","Atención al detalle","Cumplimiento de plazos","Adaptación rápida","Comunicación efectiva"],
-    contacto: { correo: "tucorreo@gmail.com", ubicacion: "Los Mochis, Sinaloa", telefono: "—", instagram: "", tiktok: "", youtube: "" }
+    contacto: { correo: "tucorreo@gmail.com", ubicacion: "Los Mochis, Sinaloa", telefono: "—", instagram: "", tiktok: "", youtube: "" },
+    videos: [
+        { url: "https://www.youtube.com/watch?v=Jn90INHDCHU", titulo: "" },
+        { url: "https://www.youtube.com/watch?v=Im6oMx7sDc0", titulo: "" },
+        { url: "https://www.youtube.com/watch?v=IN1FSM1MNgI", titulo: "" },
+        { url: "https://www.tiktok.com/@akimgames/video/7476381711480229125", titulo: "" },
+        { url: "https://www.tiktok.com/@akimaguilar/video/7568567283111562517", titulo: "" },
+        { url: "https://www.tiktok.com/@akimaguilar/video/7557556758387002642", titulo: "" }
+    ]
 };
 
 function get(key, fallback) {
@@ -266,7 +274,7 @@ function renderVideos() {
     const container  = document.getElementById("videoContainer");
     const emptyState = document.getElementById("empty-state");
     container.innerHTML = "";
-    const videos = getJSON("videos", []);
+    const videos = getJSON("videos", DEFAULTS.videos);
     if (!videos.length) { emptyState.style.display = "flex"; return; }
     emptyState.style.display = "none";
 
@@ -314,7 +322,7 @@ function renderVideos() {
 function renderVideosAdmin() {
     const list = document.getElementById("videosAdminList");
     list.innerHTML = "";
-    const videos = getJSON("videos", []);
+    const videos = getJSON("videos", DEFAULTS.videos);
     videos.forEach((v, i) => {
         const info = detectarPlataforma(v.url || v);
         const badge = info ? `<span style="font-size:.75em;opacity:.7;margin-right:6px">${badgePlataforma(info.plataforma)}</span>` : "";
@@ -329,7 +337,7 @@ function agregarVideo() {
     const url = document.getElementById("videoUrl").value.trim();
     if (!url) return;
     if (!detectarPlataforma(url)) { toast("URL no válida. Acepta YouTube, TikTok, Instagram o Facebook ✗", true); return; }
-    let videos = getJSON("videos", []);
+    let videos = getJSON("videos", DEFAULTS.videos);
     videos.push({ url, titulo: "" });
     localStorage.setItem("videos", JSON.stringify(videos));
     document.getElementById("videoUrl").value = "";
@@ -343,7 +351,7 @@ function agregarVideoAdmin() {
     const titulo = document.getElementById("videoTituloAdmin").value.trim();
     if (!url) return;
     if (!detectarPlataforma(url)) { toast("URL no válida. Acepta YouTube, TikTok, Instagram o Facebook ✗", true); return; }
-    let videos = getJSON("videos", []);
+    let videos = getJSON("videos", DEFAULTS.videos);
     videos.push({ url, titulo });
     localStorage.setItem("videos", JSON.stringify(videos));
     document.getElementById("videoUrlAdmin").value = "";
@@ -354,7 +362,7 @@ function agregarVideoAdmin() {
 }
 
 function eliminarVideo(i) {
-    let videos = getJSON("videos", []);
+    let videos = getJSON("videos", DEFAULTS.videos);
     videos.splice(i, 1);
     localStorage.setItem("videos", JSON.stringify(videos));
     renderVideos();
