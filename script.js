@@ -68,7 +68,7 @@ const DEFAULTS = {
     contactoTitulo:   "Trabajemos juntos.",
     contactoSubtitulo:"¿Tienes un proyecto? Hablemos.",
     habilidades: ["Adobe Premiere Pro","CapCut","Filmora","Edición en PC","Edición Móvil","YouTube","TikTok","Redes Sociales","Highlights / Clips","Trabajo en Equipo","Atención al detalle","Cumplimiento de plazos","Adaptación rápida","Comunicación efectiva"],
-    contacto: { correo: "tucorreo@gmail.com", ubicacion: "Los Mochis, Sinaloa", telefono: "—", instagram: "", tiktok: "", youtube: "" },
+    contacto: { correo: "orlandoarroyogonzalez@gmail.com", ubicacion: "Los Mochis, Sinaloa", telefono: "+52 6871209873", instagram: "", tiktok: "", youtube: "" },
     videos: [
         { url: "https://www.youtube.com/watch?v=Jn90INHDCHU", titulo: "" },
         { url: "https://www.youtube.com/watch?v=Im6oMx7sDc0", titulo: "" },
